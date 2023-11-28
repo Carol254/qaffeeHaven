@@ -11,7 +11,9 @@ nav{
     color: #fff !important;
 }
 .navbar-brand{
-    color: #fff !important;
+    color: gold !important;
+    font-family: 'Pacifico', cursive;
+    // font-family: 'Playfair Display', serif;
 }
 .form-control{
     border-radius: 30px;
@@ -20,4 +22,7 @@ nav{
 }
 .bi{
     color: #fff !important;
+}
+.navbar-nav >.items{
+    margin-left: auto !important;
 }
