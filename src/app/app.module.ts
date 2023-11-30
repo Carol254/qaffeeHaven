@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { TopProductsComponent } from './top-products/top-products.component';
 import { AdsPageComponent } from './ads-page/ads-page.component';
+import { ExpertsComponent } from './experts/experts.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AdsPageComponent } from './ads-page/ads-page.component';
     HomeComponent,
     ServicesComponent,
     TopProductsComponent,
-    AdsPageComponent
+    AdsPageComponent,
+    ExpertsComponent
   ],
   imports: [
     BrowserModule,
