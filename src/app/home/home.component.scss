@@ -53,7 +53,12 @@ h1,.brew{
     left: 100px;
 }
 .textContent > .seed1 >img{
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
     border-radius: 40px;
+}
+.mainImg{
+    border-radius: 120px;
+    padding-left: 10px;
 }
