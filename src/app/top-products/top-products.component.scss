@@ -36,6 +36,7 @@ h2,p{
 }
 .names{
     text-align: center;
+    margin-top: 4px;
 }
 .types{
     margin: auto;
@@ -43,4 +44,14 @@ h2,p{
     border-radius: 20px;
     width: fit-content;
     padding: 5px;
+    margin-top: 5px;
+}
+.typeImg{
+    object-fit: contain;
+    border-radius: 50%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
 }
