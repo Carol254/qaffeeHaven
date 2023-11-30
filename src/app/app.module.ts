@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
 import { TopProductsComponent } from './top-products/top-products.component';
+import { AdsPageComponent } from './ads-page/ads-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TopProductsComponent } from './top-products/top-products.component';
     HeaderComponent,
     HomeComponent,
     ServicesComponent,
-    TopProductsComponent
+    TopProductsComponent,
+    AdsPageComponent
   ],
   imports: [
     BrowserModule,
