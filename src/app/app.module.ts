@@ -9,6 +9,7 @@ import { ServicesComponent } from './services/services.component';
 import { TopProductsComponent } from './top-products/top-products.component';
 import { AdsPageComponent } from './ads-page/ads-page.component';
 import { ExpertsComponent } from './experts/experts.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ExpertsComponent } from './experts/experts.component';
     ServicesComponent,
     TopProductsComponent,
     AdsPageComponent,
-    ExpertsComponent
+    ExpertsComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,
