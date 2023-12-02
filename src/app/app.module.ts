@@ -11,6 +11,7 @@ import { AdsPageComponent } from './ads-page/ads-page.component';
 import { ExpertsComponent } from './experts/experts.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { BookingComponent } from './booking/booking.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BookingComponent } from './booking/booking.component';
     AdsPageComponent,
     ExpertsComponent,
     TestimonialsComponent,
-    BookingComponent
+    BookingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
