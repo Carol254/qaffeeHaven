@@ -49,11 +49,7 @@
         i {
           font-size: 1.5rem;
         }
-        input{
-          border: none !important;
-          outline: none !important;
-          background-color: #bfbfbf;
-        }
+       
 
       }
   
@@ -78,6 +74,12 @@
           color: #fff;
           text-decoration: none;
           font-size: 0.8rem;
+        }
+
+        .inputs >input {
+          border: none !important;
+          outline: none !important;
+          background-color: #bfbfbf;
         }
       }
       .confirm{

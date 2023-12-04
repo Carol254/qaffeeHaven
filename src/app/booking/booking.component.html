@@ -3,11 +3,19 @@
         <section class="card">
           <div class="content">
             <h3 style="text-align: center;">Let's book a Table For you</h3>
-            <div class="info mx-5  py-2">
-              <div class="inputs"><i class="bi bi-telephone"></i><input type="text" placeholder="Your Number"></div>
-              <div class="inputs"><i class="bi bi-person"></i> <input type="number" placeholder="People" ></div>
-              <button>Book Table</button>
-            </div>
+            <form class="info mx-5  py-2" [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+              <div class="inputs">
+                <i class="bi bi-telephone"></i>
+                <label for="client-number">Your Number:</label>
+                <input type="text" maxlength="10" id="client-number" formControlName="clientNumber">
+                </div>
+              <div class="inputs">
+                <i class="bi bi-person"></i>
+                <label for="number-of-ppl">People:</label> 
+                <input type="number" maxlength="2" id="number-of-ppl" formControlName="people">
+              </div>
+              <button type="submit" [disabled]="!bookingForm.valid">Book Table</button>
+            </form>
             <div class="confirm">
               We will contact you to confirm your booking
             </div>
