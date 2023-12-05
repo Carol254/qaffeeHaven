@@ -1,3 +1,27 @@
-.main{
-    height: 100vh;
+.card{
+    width: 300px;
+    height: 350px;
+    color: #54372b;
+    
+
+    img{
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+}
+.recipeItems{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.typeImg{
+    object-fit: contain;
+    border-radius: 50%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

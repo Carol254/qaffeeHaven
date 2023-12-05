@@ -18,6 +18,8 @@ import { BookingComponent } from './booking/booking.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RecipeComponent } from './recipe/recipe.component';
+import { TruncatePipe } from './pipes/trancate.pipe';
+
 
 
 const appRoutes:Routes = [
@@ -38,7 +40,8 @@ const appRoutes:Routes = [
     TestimonialsComponent,
     BookingComponent,
     FooterComponent,
-    RecipeComponent
+    RecipeComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

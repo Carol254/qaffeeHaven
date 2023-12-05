@@ -1,16 +1,22 @@
 <div class="container">
     <div class="main">
         <form (submit)="getSearch($event)">
-            <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone:true}"/>
-            <button type="submit">Search</button>
+            <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone:true}" placeholder="Search Recipe..."/>
+            <button class="btn" type="submit">Search</button>
         </form>
 
-        <div *ngFor="let recipe of recipes">
-            {{recipe.recipe.label}}
-            <img [src]="recipe.recipe.image" alt="{{ recipe.recipe.label }}">
-            <p>Cuisine Type: {{ recipe.recipe.cuisineType }}</p>
-            <p>Dish Type: {{ recipe.recipe.dishType }}</p>
-
+        <div class="recipeItems">
+            <div class="card my-2 p-2" *ngFor="let recipe of recipes">
+                <img class="typeImg" [src]="recipe.recipe.image" alt="{{ recipe.recipe.label }}">
+                <p><b>Label:</b>{{recipe.recipe.label | truncate:20}}</p>
+                <p><b>Cuisine Type: </b>{{ recipe.recipe.cuisineType }}</p>
+                <p><b>Dish Type:</b> {{ recipe.recipe.dishType }}</p> 
+                
+                <div class="d-flex justify-content-between">
+                    <i class="bi bi-heart"></i>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="share"></mat-icon>
+                </div>
+            </div>
         </div>
     </div>
 </div>
