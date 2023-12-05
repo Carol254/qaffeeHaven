@@ -25,3 +25,21 @@
     align-items: center;
     justify-content: center;
 }
+input{
+    width: 80%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #54372b;
+    background-color:#f9f6f2 ;
+
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .btn{
+        background-color: #54372b;
+        color: #f9f6f2;
+    }
+}

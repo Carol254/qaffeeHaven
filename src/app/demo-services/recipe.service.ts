@@ -21,8 +21,8 @@ export class RecipeService {
   search:string = '';
   query:string = 'coffee';
   
-  private readonly APP_ID = '';
-  private readonly APP_KEY = '';
+  private readonly APP_ID = 'f993ad04';
+  private readonly APP_KEY = '56c50ea914dd331dab3aa5705990d2a5';
 
   constructor(private http:HttpClient) { }
 

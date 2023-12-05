@@ -1,7 +1,7 @@
 <div class="container">
     <div class="main">
-        <form (submit)="getSearch($event)">
-            <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone:true}" placeholder="Search Recipe..."/>
+        <form (submit)="getSearch($event)" class="search">
+            <input type="text" class="m-2" [(ngModel)]="search" [ngModelOptions]="{standalone:true}" placeholder="Search Recipe..."/>
             <button class="btn" type="submit">Search</button>
         </form>
 
