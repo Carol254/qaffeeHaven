@@ -1,5 +1,16 @@
 <div class="container">
     <div class="main">
-        Recipes
+        <form (submit)="getSearch($event)">
+            <input type="text" [(ngModel)]="search" [ngModelOptions]="{standalone:true}"/>
+            <button type="submit">Search</button>
+        </form>
+
+        <div *ngFor="let recipe of recipes">
+            {{recipe.recipe.label}}
+            <img [src]="recipe.recipe.image" alt="{{ recipe.recipe.label }}">
+            <p>Cuisine Type: {{ recipe.recipe.cuisineType }}</p>
+            <p>Dish Type: {{ recipe.recipe.dishType }}</p>
+
+        </div>
     </div>
 </div>

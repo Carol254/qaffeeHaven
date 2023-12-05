@@ -1,5 +1,7 @@
-import { Component,OnInit } from '@angular/core';
-import { RecipeService } from '../demo-services/recipe.service';
+import { Component,Input,OnInit } from '@angular/core';
+import { RecipeService,Recipe } from '../demo-services/recipe.service';
+import { error } from 'jquery';
+
 
 @Component({
   selector: 'app-recipe',
@@ -8,9 +10,36 @@ import { RecipeService } from '../demo-services/recipe.service';
 })
 export class RecipeComponent implements OnInit {
 
+  recipes:Recipe[] = [];
+  search:string = '';
+  query:string = '';
+
   constructor(private recipeService:RecipeService){}
 
-ngOnInit(): void {
+  ngOnInit(): void {
+    this.loadRecipes();
+  }
+
+
+  loadRecipes(){
+    this.recipeService.getCoffeeRecipes().subscribe( {
+      next:(recipe:Recipe[])=>{
+          this.recipes = recipe;
+      },
+      error:(err:any)=>{
+        console.error('Error fetching recipes ',err);
+      }
+    } )
+  }
+
+  updateSearch(event:any){
+    this.search = event.target.value;
+  }
+
+  getSearch(event:any){
+    event.preventDefault();
+    this.recipeService.query = this.search;
+    this.search = '';
     this.recipeService.getCoffeeRecipes();
-}
+  }
 }

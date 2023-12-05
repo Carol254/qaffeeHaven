@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, map } from 'rxjs';
 
 export interface Recipe{
   recipe:{
@@ -26,24 +27,20 @@ export class RecipeService {
   constructor(private http:HttpClient) { }
 
 
-  getCoffeeRecipes(){
-    this.http.get(`https://api.edamam.com/search?q=${this.query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`).subscribe((data:any) =>{
+  getCoffeeRecipes():Observable<Recipe[]>{
+  return this.http.get(`https://api.edamam.com/search?q=${this.query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`).pipe(
+    map((data:any) =>{
       this.recipes = data.hits;
-      console.log(data.hits);
+      return this.recipes;
     })
+  );
   }
 
   updateSearch(event:any){
     this.search = event.target.value;
   }
 
-  getSearch(event:any){
-    event.preventDefault();
-    this.query = this.search;
-    this.search = '';
-    this.getCoffeeRecipes();
 
-  }
 
 
 }
