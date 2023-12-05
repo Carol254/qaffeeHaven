@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +15,15 @@ import { ExpertsComponent } from './experts/experts.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { BookingComponent } from './booking/booking.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { RecipeComponent } from './recipe/recipe.component';
+
+
+const appRoutes:Routes = [
+  {path:'',redirectTo:'/home',pathMatch:'full'},
+  {path:'home',component:HomeComponent},
+  {path:'recipe',component:RecipeComponent}
+]
 
 @NgModule({
   declarations: [
@@ -25,12 +36,21 @@ import { FooterComponent } from './footer/footer.component';
     ExpertsComponent,
     TestimonialsComponent,
     BookingComponent,
-    FooterComponent
+    FooterComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
