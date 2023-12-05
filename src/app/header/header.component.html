@@ -26,8 +26,13 @@
               <a class="nav-link" href="#">Blogs</a>
             </li>
         </ul>
-        <form class="form-inline d-flex my-2 mx-3 ms-auto my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search your mood" aria-label="Search">
+        <form class="form-inline d-flex my-2 mx-3 ms-auto my-lg-0"(submit)="getSearch($event)">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search your mood" aria-label="Search"  [(ngModel)]="search" [ngModelOptions]="{standalone:true}">
+           <ul class="navbar-nav  ms-auto mt-2 mt-lg-0"> 
+            <li class="nav-item">
+              <a class="nav-link"><i class="bi bi-search-heart"></i></a>
+            </li>
+          </ul>
         </form>
   
         <ul class="navbar-nav  ms-auto mt-2 mt-lg-0"> 

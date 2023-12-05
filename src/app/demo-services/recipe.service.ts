@@ -39,8 +39,4 @@ export class RecipeService {
   updateSearch(event:any){
     this.search = event.target.value;
   }
-
-
-
-
 }
