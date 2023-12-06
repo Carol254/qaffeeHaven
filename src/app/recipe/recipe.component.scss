@@ -43,3 +43,13 @@ input{
         color: #f9f6f2;
     }
 }
+
+.like{
+    background-color: #fff;
+}
+.like > mat-icon{
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

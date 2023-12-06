@@ -1,4 +1,5 @@
-import { Component,ElementRef,Input,OnInit, ViewChild } from '@angular/core';
+import { Component,ElementRef,OnInit, ViewChild } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import { RecipeService,Recipe} from '../demo-services/recipe.service';
 import { pwa } from 'pwafire';
 
@@ -17,6 +18,9 @@ export class RecipeComponent implements OnInit {
   search:string = '';
   query:string = '';
 
+  message:string = 'Text Copied';
+  action:string = 'Close';
+
 
   copyData!: {
     title: string;
@@ -25,7 +29,8 @@ export class RecipeComponent implements OnInit {
   };
 
 
-  constructor(private recipeService:RecipeService){}
+  constructor(private recipeService:RecipeService,
+              private _snackbar:MatSnackBar){}
 
   ngOnInit(): void {
     this.loadRecipes();
@@ -70,7 +75,11 @@ export class RecipeComponent implements OnInit {
   }
 
   copyText(recipe:any){
+    this._snackbar.open(this.message, this.action);
+    
     const textToCopy = `Recipe label: ${recipe.recipe.label}\nDish Type: ${recipe.recipe.dishType}\nCuisine Type: ${recipe.recipe.cuisineType}`;
     pwa.copyText(textToCopy);
+
+   
 }
 }

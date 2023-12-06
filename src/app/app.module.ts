@@ -7,6 +7,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 import { AppComponent } from './app.component';
@@ -55,6 +58,8 @@ const appRoutes:Routes = [
     FormsModule,
     MatTooltipModule,
     MatButtonModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),

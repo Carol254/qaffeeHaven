@@ -7,14 +7,16 @@
 
         <div class="recipeItems">
             <div class="card my-2 p-2" *ngFor="let recipe of recipes" #cardText >
+                <div class="like">
+                    <div *ngIf="!recipe.addedToFavourites"><i class="bi bi-heart" matTooltip="Add to Favourites" (click)="addToFav(recipe)"></i></div>
+                    <div *ngIf="recipe.addedToFavourites"><i class="bi-heart-fill" matTooltip="Unmark as Favourite" (click)="addToFav(recipe)"></i></div>
+                </div>
                 <img class="typeImg" [src]="recipe.recipe.image" alt="{{ recipe.recipe.label }}">
                 <p><b>Label:</b>{{recipe.recipe.label | truncate:20}}</p>
                 <p><b>Cuisine Type: </b>{{ recipe.recipe.cuisineType }}</p>
                 <p><b>Dish Type:</b> {{ recipe.recipe.dishType }}</p> 
-                <button  (click)="copyText(recipe)"> click</button>
                 <div class="d-flex justify-content-between">
-                    <div *ngIf="!recipe.addedToFavourites"><i class="bi bi-heart" matTooltip="Add to Favourites" (click)="addToFav(recipe)"></i></div>
-                    <div *ngIf="recipe.addedToFavourites"><i class="bi-heart-fill" matTooltip="Unmark as Favourite" (click)="addToFav(recipe)"></i></div>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="filter_none" matTooltip="copy Recipe" (click)="copyText(recipe)"></mat-icon>
                     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="share" (click)="share(recipe)" matTooltip="Share"></mat-icon>
                 </div>
             </div>
