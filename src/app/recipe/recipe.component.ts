@@ -50,4 +50,8 @@ export class RecipeComponent implements OnInit {
     }
     pwa.Share(ShareData);
   }
+
+  addToFav(recipe:Recipe){
+    recipe.addedToFavourites = !recipe.addedToFavourites;
+  }
 }

@@ -10,6 +10,7 @@ export interface Recipe{
     cuisineType: string,
     dishType:string
   }
+  addedToFavourites?: boolean; 
 }
 
 @Injectable({

@@ -13,8 +13,9 @@
                 <p><b>Dish Type:</b> {{ recipe.recipe.dishType }}</p> 
                 
                 <div class="d-flex justify-content-between">
-                    <i class="bi bi-heart"></i>
-                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="share" (click)="share(recipe)"></mat-icon>
+                    <div *ngIf="!recipe.addedToFavourites"><i class="bi bi-heart" matTooltip="Add to Favourites" (click)="addToFav(recipe)"></i></div>
+                    <div *ngIf="recipe.addedToFavourites"><i class="bi-heart-fill" matTooltip="Unmark as Favourite" (click)="addToFav(recipe)"></i></div>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="share" (click)="share(recipe)" matTooltip="Share"></mat-icon>
                 </div>
             </div>
         </div>

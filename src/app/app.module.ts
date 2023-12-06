@@ -5,6 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatButtonModule} from '@angular/material/button';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RecipeComponent } from './recipe/recipe.component';
 import { TruncatePipe } from './pipes/trancate.pipe';
+
 
 
 
@@ -49,6 +53,8 @@ const appRoutes:Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatTooltipModule,
+    MatButtonModule,
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
