@@ -3,8 +3,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { RecipeService,Recipe} from '../demo-services/recipe.service';
 import { pwa } from 'pwafire';
 
-
-
 @Component({
   selector: 'app-recipe',
   templateUrl: './recipe.component.html',
@@ -21,6 +19,7 @@ export class RecipeComponent implements OnInit {
   message:string = 'Text Copied';
   action:string = 'Close';
 
+  text:any;
 
   copyData!: {
     title: string;
@@ -29,11 +28,22 @@ export class RecipeComponent implements OnInit {
   };
 
 
+  data:any = {
+    title: "Hello Notification!",
+    options: {
+        body: "Progressive Web App Hello Notification!",
+        icon: "../images/icons/icon-192x192.png",
+        tag: "pwa",
+      },
+  }
+
+
   constructor(private recipeService:RecipeService,
               private _snackbar:MatSnackBar){}
 
   ngOnInit(): void {
     this.loadRecipes();
+    pwa.Notification(this.data);
   }
 
 
@@ -74,12 +84,18 @@ export class RecipeComponent implements OnInit {
     recipe.addedToFavourites = !recipe.addedToFavourites;
   }
 
-  copyText(recipe:any){
-    this._snackbar.open(this.message, this.action);
-    
+  async copyText(recipe:any){
+    this._snackbar.open(this.message, this.action ,{
+      duration: 2000
+    });
     const textToCopy = `Recipe label: ${recipe.recipe.label}\nDish Type: ${recipe.recipe.dishType}\nCuisine Type: ${recipe.recipe.cuisineType}`;
     pwa.copyText(textToCopy);
 
-   
-}
+    const res = await pwa.readText();
+    this.text = res.ok ? res.text: '';
+  }
+
+  // copyImage(recipe:any){
+  //   pwa.copyImage(recipe.recipe.image);
+  // }
 }

@@ -33,6 +33,7 @@ export class RecipeService {
   return this.http.get(`https://api.edamam.com/search?q=${this.query}&app_id=${this.APP_ID}&app_key=${this.APP_KEY}`).pipe(
     map((data:any) =>{
       this.recipes = data.hits;
+      console.log(this.recipes);
       return this.recipes;
     })
   );
