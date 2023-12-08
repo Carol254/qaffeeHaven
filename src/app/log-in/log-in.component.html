@@ -13,12 +13,21 @@
                     </div> -->
                     
                     <div>
-                        <h2 class="title">Sign In</h2>
-                        <input type="text" placeholder="Enter Email Address" #emailSignIn class="p-2 my-2">
-                        <input type="text" placeholder="Enter password" #passwordSignIn class="p-2 my-2">
-                        <button class="btn my-2"  (click)="onSignIn(emailSignIn.value, passwordSignIn.value)">Log In</button>
+                        <div *ngIf="!newUser">
+                            <h2 class="title">Sign In</h2>
+                            <input type="text" placeholder="Enter Email Address" #emailSignIn class="p-2 my-2">
+                            <input type="text" placeholder="Enter password" #passwordSignIn class="p-2 my-2">
+                            <button class="btn my-2"  (click)="onSignIn(emailSignIn.value, passwordSignIn.value)">Log In</button>
+                            <p class="title">Forgot Password?</p>  
+                        </div>
+                       <div *ngIf="newUser">
+                            <h2 class="title">Sign Up</h2>
+                            <input type="text" placeholder="Enter Email Address" #emailSignUp class="p-2 my-2">
+                            <input type="text" placeholder="Enter password" #passwordSignUp class="p-2 my-2">
+                            <button class="btn my-2"  (click)="onSignUp(emailSignUp.value, passwordSignUp.value)">Sign Up</button>
+                       </div>
 
-                        <p class="title">Forgot Password?</p>
+                        
 
                         <p class="title">---------------------Join Us with--------------------</p>
                         <div class="d-flex icons">
@@ -31,8 +40,10 @@
     
                
                
-                <p class="terms">Don't have an account yet? <b><a>Create Account</a></b> </p>
-              
+                <p class="terms" *ngIf="!newUser">Don't have an account yet? <b (click)="createAccount()">Create Account</b> </p>
+                <p class="terms" *ngIf="newUser">Already have an account? <b (click)="signInInstead()">Sign In</b> </p>
+
+                
             </div>
          
         </div>

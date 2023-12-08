@@ -27,6 +27,7 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { TruncatePipe } from './pipes/trancate.pipe';
 import { FirebaseService } from './demo-services/firebase.service';
 import { LogInComponent } from './log-in/log-in.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -34,7 +35,10 @@ import { LogInComponent } from './log-in/log-in.component';
 const appRoutes:Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'log-in',component:LogInComponent},
-  {path:'home',component:HomeComponent},
+  {path:'home',
+  component:HomeComponent,
+  canActivate:[AuthGuard]
+},
   {path:'recipe',component:RecipeComponent}
 ]
 

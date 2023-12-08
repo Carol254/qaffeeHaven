@@ -11,6 +11,8 @@ export class LogInComponent implements OnInit{
 
 isSignedIn = false;
 
+newUser:boolean = false;
+
 constructor(public firebaseService:FirebaseService, private router:Router){}
 
   ngOnInit(): void {
@@ -39,6 +41,14 @@ async onSignUp(email:string, password:string){
 
 handleLogOut(){
   this.isSignedIn = false;
+}
+
+createAccount(){
+  this.newUser = true;
+}
+
+signInInstead(){
+  this.newUser = false;
 }
 
 }
