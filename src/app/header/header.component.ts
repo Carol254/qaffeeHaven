@@ -25,19 +25,11 @@ export class HeaderComponent {
     this.recipeService.query = this.search;
     this.search = '';
     this.recipeService.getCoffeeRecipes();
-    this.router.navigate(['/recipe']);
+    this.router.navigate(['dashboard/recipe']);
   }
 
   handleLogOut(){
-    this.router.navigate(['/log-in']);
-
-    if(this.firebaseService.isloggedIn){
-      this.isSignedIn;
-      this.firebaseService.logOut();
-
-    }
-   
-    // this.isLoggedOut.emit();
+    this.firebaseService.logOut();
   }
 
 }

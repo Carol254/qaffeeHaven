@@ -27,19 +27,29 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { TruncatePipe } from './pipes/trancate.pipe';
 import { FirebaseService } from './demo-services/firebase.service';
 import { LogInComponent } from './log-in/log-in.component';
-import { AuthGuard } from './auth.guard';
-
-
-
+import { loginGuard } from './login.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { environment } from 'src/environments/environment';
 
 const appRoutes:Routes = [
-  {path:'',redirectTo:'/home',pathMatch:'full'},
-  {path:'log-in',component:LogInComponent},
-  {path:'home',
-  component:HomeComponent,
-  canActivate:[AuthGuard]
-},
-  {path:'recipe',component:RecipeComponent}
+  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  {path:'login',component:LogInComponent},
+  {
+    path:'dashboard',
+    component:DashboardComponent,
+    canActivate:[loginGuard],
+    children: [
+      {
+        path: '',
+        component: HomeComponent,  
+      },
+      {
+        path: 'recipe',
+        component: RecipeComponent,  
+      }
+    ],
+  },
+  
 ]
 
 @NgModule({
@@ -56,7 +66,8 @@ const appRoutes:Routes = [
     FooterComponent,
     RecipeComponent,
     TruncatePipe,
-    LogInComponent
+    LogInComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -70,12 +81,12 @@ const appRoutes:Routes = [
     BrowserAnimationsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp({
-                      apiKey: "AIzaSyDKINPDWdBLHd0rXjcE6UFniG6MGEQVSlU",
-                      authDomain: "qaffee-haven.firebaseapp.com",
-                      projectId: "qaffee-haven",
-                      storageBucket: "qaffee-haven.appspot.com",
-                      messagingSenderId: "772102725914",
-                      appId: "1:772102725914:web:b73043cde2644af21c4ca3"
+                      apiKey: environment.firebase.apiKey,
+                      authDomain: environment.firebase.authDomain,
+                      projectId: environment.firebase.projectId,
+                      storageBucket: environment.firebase.storageBucket,
+                      messagingSenderId: environment.firebase.messagingSenderId,
+                      appId: environment.firebase.appId
     }),
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', {

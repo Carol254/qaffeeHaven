@@ -1,19 +1,29 @@
 .main{
-    background-image: url('/assets/ad3.jpg');
+    background-image: url('/assets/login_bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh
+    height: 100%;
+    object-fit: contain;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card{
     width: 400px;
-    height:400px;
+    height:600px;
     float: right;
 }
 
 form{
     position: relative;
-   height: 100vh;
 }
 input{
     width: 100%;

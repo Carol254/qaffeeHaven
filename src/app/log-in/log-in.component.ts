@@ -25,18 +25,11 @@ constructor(public firebaseService:FirebaseService, private router:Router){}
   
 async onSignIn(email:string, password:string){
     await this.firebaseService.signIn(email,password)
-    if(this.firebaseService.isloggedIn){
-      this.isSignedIn = true;
-      this.router.navigate(['home']);
-    }
 }
 
   
 async onSignUp(email:string, password:string){
   await this.firebaseService.signUp(email,password)
-  if(this.firebaseService.isloggedIn){
-    this.isSignedIn = true;
-  }
 }
 
 handleLogOut(){
