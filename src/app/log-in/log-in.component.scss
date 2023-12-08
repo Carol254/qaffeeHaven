@@ -1,0 +1,52 @@
+.main{
+    background-image: url('/assets/ad3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh
+}
+.card{
+    width: 400px;
+    height:400px;
+    float: right;
+}
+
+form{
+    position: relative;
+   height: 100vh;
+}
+input{
+    width: 100%;
+    background-color:#d9d9d9;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+}
+.btn{
+    width: 100%;
+    background-color: rgb(94, 46, 12);
+    color: white;
+    border-radius: 15px;
+}
+.terms{
+    color: rgb(94, 46, 12);
+    bottom: 0;
+    position: absolute;
+}
+.title{
+    color: rgb(94, 46, 12);
+    text-align: center;
+}
+.icons {
+    justify-content: center;
+    align-items: center;
+
+    i{
+        font-size: larger;
+        color: rgb(94, 46, 12);
+        cursor: pointer;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

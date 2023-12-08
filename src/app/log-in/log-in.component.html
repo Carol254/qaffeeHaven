@@ -1,0 +1,42 @@
+
+
+<div class="container">
+    <div class="main mt-2">
+        <div class="card m-5">
+            <div class="container">
+                <form>
+                    <!-- <div *ngIf="!isSignedIn">
+                        <h2><u>Sign Up</u></h2>
+                        <input type="text" #emailSignUp  class="p-2 my-2">
+                        <input type="password" #passwordSignUp  class="p-2 my-2">
+                        <button class="btn my-2" (click)="onSignUp(emailSignUp.value, passwordSignUp.value)">Sign Up</button>
+                    </div> -->
+                    
+                    <div>
+                        <h2 class="title">Sign In</h2>
+                        <input type="text" placeholder="Enter Email Address" #emailSignIn class="p-2 my-2">
+                        <input type="text" placeholder="Enter password" #passwordSignIn class="p-2 my-2">
+                        <button class="btn my-2"  (click)="onSignIn(emailSignIn.value, passwordSignIn.value)">Log In</button>
+
+                        <p class="title">Forgot Password?</p>
+
+                        <p class="title">---------------------Join Us with--------------------</p>
+                        <div class="d-flex icons">
+                            <i class="bi bi-google"></i>
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-apple"></i>
+                        </div>
+                    </div>
+                </form>
+    
+               
+               
+                <p class="terms">Don't have an account yet? <b><a>Create Account</a></b> </p>
+              
+            </div>
+         
+        </div>
+       
+
+    </div>
+</div>
