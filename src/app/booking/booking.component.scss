@@ -77,9 +77,10 @@
         }
 
         .inputs >input {
-          border: none !important;
+          border: none;
           outline: none !important;
           background-color: #bfbfbf;
+          border-bottom:1px solid  #54372b;
         }
       }
       .confirm{
