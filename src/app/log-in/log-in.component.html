@@ -1,13 +1,13 @@
 <div class="main">
-        <div class="card m-5">
+        <div class="card">
             <div class="container">
                 <form>
                     <div>
                         <div class="logoContainer">
-                            <img class="logo" src="\assets\qaffee-haven.png">
+                            <img class="logo" src="\assets\QAFFEE_HAVEN-new.png">
                         </div>
                         <div *ngIf="!newUser">
-                            <h2 class="title">Sign In</h2>
+                            <h3 class="title">Sign In</h3>
                             <input type="text" placeholder="Enter Email Address" #emailSignIn class="p-2 my-2">
                             <input type="password" placeholder="Enter password" #passwordSignIn class="p-2 my-2">
                             <button class="btn my-2"  (click)="onSignIn(emailSignIn.value, passwordSignIn.value)">Log In</button>
