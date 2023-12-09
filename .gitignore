@@ -44,4 +44,4 @@ Thumbs.db
 /package-lock.json
 
 #environment Variables
-/environments/
+/src/environments/
