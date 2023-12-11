@@ -11,7 +11,7 @@
             <a class="nav-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" routerLink="/dashboard/products">Products</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" routerLink="/dashboard/recipe">Recipes</a>
@@ -35,13 +35,13 @@
           </ul>
         </form>
   
-        <ul class="navbar-nav  ms-auto mt-2 mt-lg-0"> 
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-person" (click)="handleLogOut()"></i></a>
-          </li>
-  
-          <li class="nav-item">
+        <ul class="navbar-nav ms-auto mt-2 mt-lg-0"> 
+          <li class="nav-item ">
             <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
+          </li>
+
+          <li class="nav-item pl-3">
+            <a class="nav-link" role="button" (click)="handleLogOut()">Log Out </a>
           </li>
         </ul>
       </div>

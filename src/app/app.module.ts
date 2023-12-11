@@ -30,6 +30,8 @@ import { LogInComponent } from './log-in/log-in.component';
 import { loginGuard } from './login.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from 'src/environments/environment';
+import { ProductsComponent } from './products/products.component';
+
 
 const appRoutes:Routes = [
   {path:'',redirectTo:'/dashboard',pathMatch:'full'},
@@ -46,6 +48,10 @@ const appRoutes:Routes = [
       {
         path: 'recipe',
         component: RecipeComponent,  
+      },
+      {
+        path:'products',
+        component:ProductsComponent
       }
     ],
   },

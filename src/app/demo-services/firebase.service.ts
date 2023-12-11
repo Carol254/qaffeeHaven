@@ -25,7 +25,7 @@ export class FirebaseService {
     await this.firebaseAuth.createUserWithEmailAndPassword(email,password)
     .then(res =>{
       localStorage.setItem('user',JSON.stringify(res.user));
-      // this.router.navigate(['login']);
+      this.signIn(email,password);
     })
   }
 
