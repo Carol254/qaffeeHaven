@@ -28,22 +28,11 @@ export class RecipeComponent implements OnInit {
   };
 
 
-  data:any = {
-    title: "Hello Notification!",
-    options: {
-        body: "Progressive Web App Hello Notification!",
-        icon: "../images/icons/icon-192x192.png",
-        tag: "pwa",
-      },
-  }
-
-
   constructor(private recipeService:RecipeService,
               private _snackbar:MatSnackBar){}
 
   ngOnInit(): void {
     this.loadRecipes();
-    pwa.Notification(this.data);
   }
 
 
@@ -95,7 +84,4 @@ export class RecipeComponent implements OnInit {
     this.text = res.ok ? res.text: '';
   }
 
-  // copyImage(recipe:any){
-  //   pwa.copyImage(recipe.recipe.image);
-  // }
 }

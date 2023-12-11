@@ -73,7 +73,8 @@ const appRoutes:Routes = [
     RecipeComponent,
     TruncatePipe,
     LogInComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

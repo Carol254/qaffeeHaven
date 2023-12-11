@@ -1,0 +1,64 @@
+.content{
+    position: relative;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.card{
+    width: 250px;
+    height: 300px;
+    background-color: #fff;
+    color: #54372b;
+    z-index: 5;
+}
+.mainContent{
+    background-color: #ebdcd0;
+    border-radius: 10px;
+}
+.like{
+    background-color: #fff;
+}
+.like > mat-icon{
+    color: #dd5328;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #ebdcd0;
+    border-radius: 50%;
+    margin: 2px;
+}
+.names{
+    text-align: center;
+    margin-top: 4px;
+}
+.types{
+    margin: auto;
+    border:1px solid #ebdcd0;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 5px;
+    margin-top: 5px;
+}
+.typeImg{
+    object-fit: contain;
+    border-radius: 50%;
+    margin:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+}
+.btn{
+    background-color: #dd5328;
+    color: #fff;
+    border-radius: 20px;
+}
+.view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
