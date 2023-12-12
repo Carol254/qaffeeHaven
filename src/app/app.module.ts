@@ -31,6 +31,7 @@ import { loginGuard } from './login.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from 'src/environments/environment';
 import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const appRoutes:Routes = [
@@ -74,7 +75,8 @@ const appRoutes:Routes = [
     TruncatePipe,
     LogInComponent,
     DashboardComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
