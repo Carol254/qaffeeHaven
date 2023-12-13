@@ -27,3 +27,21 @@ nav{
 .navbar-nav >.items{
     margin-left: auto !important;
 }
+.navbar-toggler{
+    background-color: #fff;
+}
+
+@media screen and (max-width: 768px){
+    .navbar-collapse {
+        justify-content: center;
+    }
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        height: max-content;
+    }
+    .nav-item {
+        display: inline-block;
+    }
+}
+

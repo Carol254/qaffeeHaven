@@ -1,49 +1,54 @@
 <div class="main">
   <div class="container">
     <nav class="navbar navbar-expand-lg  px-3">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <div class="container-fluid">
         <a class="navbar-brand" routerLink="/dashboard">Q-Haven</a>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/dashboard/products">Products</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="/dashboard/recipe">Recipes</a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+         
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">How to</a>
+              <a class="nav-link" routerLink="/dashboard/products">Products</a>
             </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Blogs</a>
-            </li>
-        </ul>
-        <form class="form-inline d-flex my-2 mx-3 ms-auto my-lg-0"(submit)="getSearch($event)">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search your mood" aria-label="Search"  [(ngModel)]="search" [ngModelOptions]="{standalone:true}">
-           <ul class="navbar-nav  ms-auto mt-2 mt-lg-0"> 
             <li class="nav-item">
-              <a class="nav-link"><i class="bi bi-search-heart"></i></a>
+                <a class="nav-link" routerLink="/dashboard/recipe">Recipes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">How to</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blogs</a>
+              </li>
+          </ul>
+          <form class="form-inline d-flex my-2 mx-3 ms-auto my-lg-0"(submit)="getSearch($event)">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search your mood" aria-label="Search"  [(ngModel)]="search" [ngModelOptions]="{standalone:true}">
+             <ul class="navbar-nav  ms-auto mt-2 mt-lg-0"> 
+              <li class="nav-item">
+                <a class="nav-link"><i class="bi bi-search-heart"></i></a>
+              </li>
+            </ul>
+          </form>
+    
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0"> 
+            <li class="nav-item ">
+              <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
+            </li>
+  
+            <li class="nav-item pl-3">
+              <a class="nav-link" role="button" (click)="handleLogOut()">Log Out </a>
             </li>
           </ul>
-        </form>
-  
-        <ul class="navbar-nav ms-auto mt-2 mt-lg-0"> 
-          <li class="nav-item ">
-            <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
-          </li>
-
-          <li class="nav-item pl-3">
-            <a class="nav-link" role="button" (click)="handleLogOut()">Log Out </a>
-          </li>
-        </ul>
+        </div>
       </div>
   </nav>
   </div>

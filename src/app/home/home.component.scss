@@ -4,7 +4,10 @@ img{
     height: 600px;
 }
 ._content{
-    margin-top: 70px !important;
+    margin-top: 40px !important;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap:20px;
 }
 .btn{
     background-color: #000;
@@ -39,41 +42,30 @@ h1,.brew{
   border-left: 4px solid #000;
   padding: 2px;
 }
-.textContent{
-    position: relative;
-}
-.textContent > .seed1{
-    position: absolute;
-    bottom: 50px;
-    left: 10px;
-}
-.textContent > .seed3{
-    position: absolute;
-    top: 50px;
-    right: 10px;
-}
-.textContent > .seed5{
-    position: absolute;
-    top: 200px;
-    right: 25px;
-}
-.textContent > .seed6{
-    position: absolute;
-    top: 300px;
-    right: 2px;
-}
-.textContent > .seed2{
-    position: absolute;
-    bottom: 200px;
-    left: 100px;
-}
-.textContent > .seed1 >img{
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    border-radius: 40px;
-}
+
 .mainImg{
-    border-radius:80px;
-    padding-left: 10px;
+    border-radius:30px;
+    width:500px;
+    height:500px;
+}
+
+//media queries
+@media screen and (max-width: 768px){
+    ._content{
+        .mainImg{
+            width: 200px;
+            height: 200px;
+         }
+    }
+}            
+
+@media screen and (max-width: 500px){
+    ._content{
+        display: block;
+
+        .imageContent{
+            display: none;
+        }
+    }
+
 }
