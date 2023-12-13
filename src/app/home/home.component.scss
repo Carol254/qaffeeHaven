@@ -50,11 +50,11 @@ h1,.brew{
 }
 
 //media queries
-@media screen and (max-width: 768px){
+@media screen and (max-width:992px){
     ._content{
         .mainImg{
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
          }
     }
 }            
